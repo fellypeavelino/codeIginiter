@@ -19,7 +19,20 @@
 		}
 		
 		public function pagina(){
+			//url http://localhost/CodeIgniter_2.1.2/index.php/testando/pagina
+			/*
+				criar um .htaccess no root para tirar essa porra de index
+				com 
+				RewriteEngine on
+				RewriteCond %{REQUEST_FILENAME} !-f
+				RewriteCond %{REQUEST_FILENAME} !-d
+				RewriteRule .* index.php/$0 [PT,L]
+			*/
 			$this->load->view('welcome_message');
+		}
+		
+		public function soma($x, $y){
+			echo $x + $y;
 		}
 	} 
 ?>

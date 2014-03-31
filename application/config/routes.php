@@ -37,7 +37,7 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-
+$route['bemvindo']= 'welcome/index';
 $route['default_controller'] = "testando";
 $route['404_override'] = '';
 /* End of file routes.php */
