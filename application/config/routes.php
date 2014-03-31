@@ -38,8 +38,6 @@
 |
 */
 
-$route['news/(:any)'] = 'news/view/$1';
-$route['news'] = 'news';
 $route['default_controller'] = "testando";
 $route['404_override'] = '';
 /* End of file routes.php */
