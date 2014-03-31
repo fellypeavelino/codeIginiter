@@ -1,7 +1,7 @@
 <?php 
 	class Testando extends CI_Controller{    
 		
-		function index(){                 
+		function index(){  
 			/*carrega a nossa view */ 	
 			$this->data['felipe'] = 'felipe';
 			/*$this->data[] recebe uma vaiaver e a ecoa na view*/
@@ -13,6 +13,8 @@
 			if ( $this->input->post( 'mysubmit' ) ) {
 				//pega o submit
 				echo 'ok';
+				echo $user_name = $this->input->post( 'username1' );
+
 			}
 		}
 		
