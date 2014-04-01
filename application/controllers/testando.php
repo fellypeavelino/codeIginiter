@@ -24,9 +24,13 @@
 				criar um .htaccess no root para tirar essa porra de index
 				com 
 				RewriteEngine on
+				#inicia o htaccess
 				RewriteCond %{REQUEST_FILENAME} !-f
+				#liga os arquivos
 				RewriteCond %{REQUEST_FILENAME} !-d
-				RewriteRule .* index.php/$0 [PT,L]
+				#ligado os diretorios
+				RewriteRule ^(.*)$ index.php?url=$1
+				#tudo que foi digitado na url vai para index.php
 			*/
 			$this->load->view('welcome_message');
 		}
@@ -34,5 +38,24 @@
 		public function soma($x, $y){
 			echo $x + $y;
 		}
+		
+		public function array_dados(){
+			$dados = array(
+				'titulo' => 'este titul foi passado via controler',
+				'texto' => 'texto enviado pelo contrlador',
+				'menu' => array(
+					0 => "<a href=''>Home</a>",
+					1 => "<a href=''>Sobre</a>",
+					2 => "<a href=''>Serviços</a>",
+					3 => "<a href=''>Contato</a>"
+				),
+				'segment' => $this->uri->segment(2)
+			);
+			//passando variaveis simples e cmpostas pelo controller
+			//capitura do segmento da url $this->uri->segment(numero do segmento)
+			$this->load->view('array_dados', $dados);
+		}
+		
+		//http://dev.rbtech.info/curso-de-codeigniter-para-iniciantes-aula-04/
 	} 
 ?>
