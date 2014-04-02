@@ -38,7 +38,7 @@
 |
 */
 $route['bemvindo']= 'welcome/index';
-$route['default_controller'] = "testando";
+$route['default_controller'] = "crud";
 $route['404_override'] = '';
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

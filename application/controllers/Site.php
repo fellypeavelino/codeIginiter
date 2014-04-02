@@ -7,7 +7,7 @@
  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 	class Site extends CI_Controller {
-
+		//Master page
 		public function index(){
 			$dados = array(
 				'titulo' => 'este titul foi passado via controler',
