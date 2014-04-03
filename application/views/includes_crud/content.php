@@ -1,15 +1,20 @@
-		<ul>
+		<ul><!--
+                        Os anchor são carregados por meio de helpers
+                        $this->load->helper('url');//sobre carrega o sistema
+                        ou altomaticamente pelo config/autoload.php em 
+                        $autoload['helper']// não sobre carrega o sistema
+                    -->
 			<li>
-				Create
+				<?php echo anchor('crud/create','Create');?>
 			</li>
 			<li>
-				Read
+				<?php echo anchor('crud/read','Read');?>
 			</li>
 			<li>
-				Update
+				<?php echo anchor('crud/update','Update');?>
 			</li>
 			<li>
-				Delete
+				<?php echo anchor('crud/delete','Delete');?>
 			</li>
 		</ul>
 <?php
