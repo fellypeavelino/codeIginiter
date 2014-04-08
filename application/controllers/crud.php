@@ -9,6 +9,7 @@
         public function __construct() {
             parent::__construct();
             $this->load->helper('form');
+            $this->load->library('form_validation');//biblioteca de validação de formulario
             /**
              * 
             $this->load->helper('url');
@@ -26,6 +27,16 @@
         }
         
         public function create(){
+            $this->form_validation->set_rules('nome', 'NOME', 'required|min_length[5]|max_length[12]|is_unique[users.username]');
+            //$this->form_validation->set_rules(name, menssage error, rules);
+            //validação de formulario
+            
+            if($this->form_validation->run() == false){
+                //verica se a validação ocorreu
+                echo "validação passou";
+            }else{
+                echo 'erro';
+            }
             $dados = array(
                 'titulo' => 'CRUD Create ',
                 'tela' => 'create'

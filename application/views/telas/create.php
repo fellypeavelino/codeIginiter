@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 //echo basename(__FILE__);
-    echo form_open('crude/create');
+    echo form_open('crud/create');
         $nome = array(
             'id' => 'nome',
             'name' => 'nome',
