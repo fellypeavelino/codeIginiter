@@ -8,12 +8,17 @@
         
         public function __construct() {
             parent::__construct();
+            $this->load->helper('array');
             $this->load->helper('form');
             $this->load->library('form_validation');//biblioteca de validação de formulario
+            $this->load->model('crud_model');
+            $this->load->library('session');
             /**
              * 
             $this->load->helper('url');
              * chamando helper via constructor
+             * $this->load->model('crud_model','apelido');
+             * $this->apelido->action();
             */
         }
 
@@ -42,14 +47,23 @@
             //matches[senha] verifica se valores de campos estão iguais
             //$this->form_validation->set_rules(name, menssage error, rules);
             //validação de formulario
-            if($this->input->post('Salvar')){
-              
-            }
             if($this->form_validation->run() == false){
                 //verica se a validação ocorreu
                 
             }else{
                 echo "validação passou";
+                
+                if($this->input->post('Salvar')){
+                    $dados = elements(array(
+                        'nome',
+                        'login',
+                        'email',
+                        'senha'
+                    ), $this->input->post());
+                     $dados['senha'] = md5($dados['senha']);
+                    //criptografa senha
+                     $this->crud_model->do_insert($dados);
+                }
             }
             $dados = array(
                 'titulo' => 'CRUD Create ',

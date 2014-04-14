@@ -9,6 +9,12 @@
     //retorno mensagem de erro 
     //validation_errors(); ou
     //validation_errors(<prefixo>,<sufixo>);
+    if($this->session->flashdata("cadastrook")){
+        //pegar o session criada no model
+        echo "<p>".$this->session->flashdata("cadastrook")."</p>";
+        //para usar $this->session->flashdata() necessario ir no config e criar uma chave
+        //$config['encryption_key'] = 'chave'
+    }
     echo form_open('crud/create');
         $nome = array(
             'id' => 'nome',
