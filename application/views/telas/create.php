@@ -5,14 +5,18 @@
  * and open the template in the editor.
  */
 //echo basename(__FILE__);
+    echo validation_errors('<p>','<p>'); 
+    //retorno mensagem de erro 
+    //validation_errors(); ou
+    //validation_errors(<prefixo>,<sufixo>);
     echo form_open('crud/create');
         $nome = array(
             'id' => 'nome',
             'name' => 'nome',
-            'autofocus'
         );
         echo form_label('Nome Completo: ');
-        echo form_input($nome);
+        echo form_input($nome, set_value('nome'),'autofocus');
+        // set_value('name') mantem dados apos submit 
         echo "<br/>";
         echo "<br/>";
         $email = array(
@@ -20,7 +24,7 @@
             'name' => 'email',
         );
         echo form_label('Email: ');
-        echo form_input($email);
+        echo form_input($email, set_value('email'));
         echo "<br/>";
         echo "<br/>";
         $login = array(
@@ -28,23 +32,23 @@
             'name' => 'login',
         );
         echo form_label('login: ');
-        echo form_input($login);
+        echo form_input($login, set_value('login'));
         echo "<br/>";
         echo "<br/>";
         $senha = array(
-            'id' => 'nome',
-            'name' => 'nome',
+            'id' => 'senha',
+            'name' => 'senha',
         );
         echo form_label('senha: ');
-        echo form_password($senha);
+        echo form_password($senha, set_value('senha'));
         echo "<br/>";
         echo "<br/>";
         $senha2 = array(
-            'id' => 'nome',
-            'name' => 'nome',
+            'id' => 'senha2',
+            'name' => 'senha2',
         );
         echo form_label('repita a senha: ');
-        echo form_password($senha2);
+        echo form_password($senha2, set_value('senha2'));
         echo "<br/>";
         echo "<br/>";
         echo form_submit('Salvar', 'Salvar');

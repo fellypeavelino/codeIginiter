@@ -27,15 +27,29 @@
         }
         
         public function create(){
-            $this->form_validation->set_rules('nome', 'NOME', 'required|min_length[5]|max_length[12]|is_unique[users.username]');
+            //conexao com banco auto load libirys
+            //$autoload['libraries'] = array('database');
+            //tradução para portugues
+            //https://github.com/CIBr/CodeIgniter-Portuguese-BR
+            $this->form_validation->set_rules('login','Login','required|min_length[5]|max_length[12]');
+            //is_unique[tabela.coluna]
+            $this->form_validation->set_rules('nome', 'Nome', 'required');
+            $this->form_validation->set_rules('email', 'Email','required|valid_email|is_unique[cursos.email]');
+            $this->form_validation->set_rules('senha', 'Senha', 'required|max_length[10]');
+            //personalizar mensagens
+            //$this->form_validation->set_menssage('matches', 'mensagem');
+            $this->form_validation->set_rules('senha2', 'Repita a senha', 'required|max_length[10]|matches[senha]');
+            //matches[senha] verifica se valores de campos estão iguais
             //$this->form_validation->set_rules(name, menssage error, rules);
             //validação de formulario
-            
+            if($this->input->post('Salvar')){
+              
+            }
             if($this->form_validation->run() == false){
                 //verica se a validação ocorreu
-                echo "validação passou";
+                
             }else{
-                echo 'erro';
+                echo "validação passou";
             }
             $dados = array(
                 'titulo' => 'CRUD Create ',
