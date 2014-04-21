@@ -30,7 +30,7 @@
                                 216.4, 194.1, 
                                 95.6, 54.4
                             ),
-                            //"pointStart" => "Date.UTC(2010, 0, 1)",
+                            "pointStart" => mktime(0, 0, 0, 1, 10, 1985),
                             "pointInterval" => 3600 * 1000
                         ),
                         array(
@@ -43,7 +43,7 @@
                                 200.4, 20.1,
                                 95.6, 54.4
                             ),
-                           //"pointStart" => "Date.UTC(2010, 0, 1)",
+                           "pointStart" =>  mktime(0, 0, 0, 1, 22, 1985),
                            "pointInterval" => 3600 * 1000
                         )
                     )
