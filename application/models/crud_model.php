@@ -10,8 +10,8 @@
             if($dados != null){
                 $this->db->insert('cursos',$dados);
                 //$this->db->insert(table,array)
-                $this->session->flashdata("cadastrook","Cadastro incluido com sucesso");
-                //$this->session->flashdata() só funciona quando é redirecionada
+                $this->session->set_flashdata("cadastrook","Cadastro incluido com sucesso");
+                //$this->session->set_flashdata() só funciona quando é redirecionada
                 redirect('crud/create');
             }
         }
